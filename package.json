@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next dev -p 3014",
     "build": "next build",
-    "start": "next start -p 3014",
+    "start": "node server.js",
     "lint": "next lint"
   },
   "dependencies": {
