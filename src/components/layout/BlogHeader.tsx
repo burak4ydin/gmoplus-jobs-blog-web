@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { getVerticalConfig } from '@/lib/vertical-config';
-import { t } from '@/lib/translations';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface BlogHeaderProps {
@@ -12,6 +12,7 @@ interface BlogHeaderProps {
 }
 
 export function BlogHeader({ vertical, language }: BlogHeaderProps) {
+  const t = useTranslations('blog');
   const config = getVerticalConfig(vertical);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -107,7 +108,7 @@ export function BlogHeader({ vertical, language }: BlogHeaderProps) {
             <form onSubmit={handleSearch} className="relative">
               <input
                 type="text"
-                placeholder={t(language, 'searchArticles')}
+                placeholder={t('searchArticles')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 autoFocus

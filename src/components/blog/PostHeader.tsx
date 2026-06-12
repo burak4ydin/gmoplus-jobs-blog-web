@@ -2,7 +2,8 @@ import Link from 'next/link';
 import type { Article } from '@/types/blog';
 import { CategoryBadge } from './CategoryBadge';
 import { TagList } from './TagList';
-import { t, getLocale } from '@/lib/translations';
+import { useTranslations } from 'next-intl';
+import { getLocale } from '@/lib/lang-utils';
 
 export function PostHeader({ post, language }: { post: Article; language?: string }) {
   const locale = getLocale(language);

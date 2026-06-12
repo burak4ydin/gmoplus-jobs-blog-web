@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import { SUPPORTED_LANGUAGES } from '@/lib/translations';
+import { SUPPORTED_LANGUAGES } from '@/lib/lang-utils';
 
 export function LanguageSwitcher() {
   const [open, setOpen] = useState(false);

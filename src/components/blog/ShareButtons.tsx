@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { t } from '@/lib/translations';
+import { useTranslations } from 'next-intl';
 
 export function ShareButtons({ title, slug, language }: { title: string; slug: string; language?: string }) {
+  const t = useTranslations('blog');
   const [copied, setCopied] = useState(false);
   const [url, setUrl] = useState(`/${slug}`);
 
@@ -25,7 +26,7 @@ export function ShareButtons({ title, slug, language }: { title: string; slug: s
 
   return (
     <div className="flex items-center gap-3">
-      <span className="text-sm font-medium text-gray-500">{t(language, 'share')}</span>
+      <span className="text-sm font-medium text-gray-500">{t('share')}</span>
       <a
         href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`}
         target="_blank"
