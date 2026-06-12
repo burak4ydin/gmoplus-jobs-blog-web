@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Article } from '@/types/blog';
 import { CategoryBadge } from './CategoryBadge';
 import { TagList } from './TagList';
-import { useTranslations } from 'next-intl';
+import { t } from '@/lib/translations';
 import { getLocale } from '@/lib/lang-utils';
 
 export function PostHeader({ post, language }: { post: Article; language?: string }) {
